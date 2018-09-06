@@ -1,5 +1,5 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
-import { axios } from 'axios';
+import axios from 'axios';
 
 function fetchDog() {
   return axios({
@@ -16,9 +16,9 @@ export function* workerSaga() {
   try {
     const response = yield call(fetchDog);
     const dog = response.data.message;
-    
-    yield put({type: 'API_CALL_SUCCEEDED'}, dog);
+
+    yield put({ type: 'API_CALL_SUCCESS', dog });
   } catch (error) {
-    yield put({type: 'API_CALL_FAILED'}, error);
+    yield put({ type: 'API_CALL_FAILED', error });
   }
 }

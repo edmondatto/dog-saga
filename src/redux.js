@@ -22,7 +22,7 @@ export function reducer(state = initialState, action) {
     case action.type === API_CALL_FAILURE:
       return {
         ...state,
-        fetching: null,
+        fetching: false,
         error: action.error,
         dog: null
       };
@@ -30,8 +30,7 @@ export function reducer(state = initialState, action) {
     case action.type === API_CALL_SUCCESS:
       return {
         ...state,
-        fetching: null,
-        error: null,
+        fetching: false,
         dog: action.dog
       };
 

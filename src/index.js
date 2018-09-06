@@ -14,7 +14,7 @@ import { watcherSaga } from "./sagas";
 const sagaMiddleware = createSagaMiddleware();
 
 // DevTools Middleware
-const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION && window.__REDUX_DEVTOOLS_EXTENSION();
+const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 // Create the Redux Store
 let store = createStore(
